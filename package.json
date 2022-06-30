@@ -1,0 +1,18 @@
+{
+  "name": "todo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "prestart": "docker compose down && npm i && npm run start:backend",
+    "start": "concurrently \"docker compose up\" \"npm run backend\"",
+    "backend": "cd backend && npm start",
+    "start:backend": "cd backend && npm i",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "concurrently": "^7.2.2"
+  }
+}

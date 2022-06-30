@@ -1,0 +1,20 @@
+version: '1'
+
+services:
+  database:
+    image: postgres
+    volumes:
+      - ./data/db:/var/lib/postgresql/todo/data
+    ports:
+      - '5432:5432'
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_DB=todo
+    restart: always
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8080:8080
